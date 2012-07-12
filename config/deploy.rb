@@ -19,7 +19,7 @@ server_ip = "50.17.232.142"
 set :user, "ubuntu"
 
 set :application, "MarcinCebula"
-set :repository,  "git@github.com:MarcinRKL/MarcinCebula.git"
+set :repository,  "git@github.com:MarcinRKL/MarcinKCebula.git"
 # set :branch, "staging"
 set :deploy_to, "/opt/apps/#{application}"
 set :scm, "git"
@@ -103,7 +103,7 @@ namespace :cron do
   end
 end
 
-after 'deploy:update_code', 'rvm:trust_rvmrc', 'deploy:sync','deploy:symlink'#, 'deploy:bundle'
+after 'deploy:update_code', 'rvm:trust_rvmrc', 'deploy:sync','deploy:symlink', 'deploy:bundle'
 
 ## Just precompile before push
 #deploy:assets:precompile'
