@@ -19,7 +19,7 @@ server_ip = "50.17.232.142"
 set :user, "ubuntu"
 
 set :application, "MarcinCebula"
-set :repository,  "git@github.com:MarcinRKL/MarcinKCebula.git"
+set :repository,  "git@github.com:MarcinRKL/MarcinCebula.git"
 # set :branch, "staging"
 set :deploy_to, "/opt/apps/#{application}"
 set :scm, "git"
