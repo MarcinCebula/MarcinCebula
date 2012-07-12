@@ -12,11 +12,11 @@ set :default_environment, {
 set :normalize_asset_timestamps, false
 set :ssh_options, {:forward_agent => true}
 set :use_sudo, false
+ssh_options[:keys] = File.join(ENV["HOME"], ".ssh", "id_rsa")
 
 
 server_ip = "50.17.232.142"
 set :user, "ubuntu"
-# ssh_options[:keys] = File.join(ENV["HOME"], ".ec2", "Mischief01.pem")
 
 set :application, "MarcinKCebula"
 set :repository,  "git@github.com:MarcinRKL/MarcinKCebula.git"
@@ -32,7 +32,7 @@ role :db,  server_ip, :primary => true        # This is where Rails migrations w
 
 namespace :deploy do
   
-  local_share_path = File.join(`echo $SNOZZBERRYLABS`.strip, 'SHARED', 'MarcinKCebula').to_s
+  LocalSharePath = File.join(`echo $SNOZZBERRYLABS`.strip, 'SHARED', 'MarcinKCebula').to_s
 
   task :start do ; end
   task :stop do ; end
@@ -48,9 +48,9 @@ namespace :deploy do
   desc "Sync the public/assets directory."
   task :sync do
     desc "update config folder"
-      `rsync -Paz --rsh "ssh -i #{ssh_options[:keys]}" --rsync-path "rsync" "#{local_share_path}/config" "#{user}@#{server_ip}":"#{shared_path}/"`		    
-      # `rsync -Paz --rsh "ssh -i #{ssh_options[:keys]}" --rsync-path "sudo rsync" "#{local_share_path}/config" "#{user}@#{roles[:web].servers}":"#{shared_path}/"`     
-      # `rsync -Paz --rsh "ssh -i #{ssh_options[:keys]}" --rsync-path "sudo rsync" "#{local_share_path}/log" "#{user}@#{roles[:web].servers}":"#{shared_path}/"`
+      `rsync -Paz --rsh "ssh -i #{ssh_options[:keys]}" --rsync-path "rsync" "#{LocalSharePath}/config" "#{user}@#{server_ip}":"#{shared_path}/"`		    
+      # `rsync -Paz --rsh "ssh -i #{ssh_options[:keys]}" --rsync-path "sudo rsync" "#{LocalSharePath}/config" "#{user}@#{roles[:web].servers}":"#{shared_path}/"`     
+      # `rsync -Paz --rsh "ssh -i #{ssh_options[:keys]}" --rsync-path "sudo rsync" "#{LocalSharePath}/log" "#{user}@#{roles[:web].servers}":"#{shared_path}/"`
   end
   desc "Symlink shared configs and folders on each release."
   task :symlink do
@@ -87,10 +87,12 @@ namespace :info do
   desc "print deploy variables"
   task :var_log do 
     puts "ssh_options[:keys] : #{ssh_options[:keys]}"
-    puts "local_share_path : #{local_share_path}"
+    puts "local_share_path : #{LocalSharePath}"
     puts "user : #{user}"
     puts "application : #{roles[:web].servers}"
     puts "shared_path : #{shared_path}"
+    puts "server_ip : #{server_ip}"
+    puts "user : #{user}"
   end
 end
 
