@@ -35,7 +35,7 @@ describe 'GET /api/v1/projects/:id', :type => :api do
 	    @response['example']['name'].should eq "Generic Example"
 	    @response['example']['user'].should eq  @example.user
       @response['example']['description'].should eq "Generic Example, tests for issues that may be caused by the testing framework and its componenets"
-      @response['example']['project'].should eq "MarcinKCebula"
+      @response['example']['project'].should eq "MarcinCebula"
       @response['example']['revision'].should eq 1
       @response['example']['email'].should be_nil
       @response['example']['id'].should be_nil

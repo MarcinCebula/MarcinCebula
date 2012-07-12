@@ -5,5 +5,5 @@
 # import 'lib/tasks/jasmine.rake'
 require File.expand_path('../config/application', __FILE__)
 
-MarcinKCebula::Application.load_tasks
+MarcinCebula::Application.load_tasks
 

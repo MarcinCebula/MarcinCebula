@@ -1,10 +1,10 @@
 development:
   host: localhost
-  database: marcin_k_cebula_development
+  database: marcin_cebula_development
 
 test:
   host: localhost
-  database: marcin_k_cebula_test
+  database: marcin_cebula_test
 
 # set these environment variables on your prod server
 production:

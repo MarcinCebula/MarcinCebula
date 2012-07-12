@@ -23,7 +23,7 @@ describe 'PUT /api/v1/projects/:id', :type => :api do
       @updated_example.name.should eq "New Example Name"
 	    @updated_example.user.should eq @example.user
       @updated_example.description.should eq "Generic Example, tests for issues that may be caused by the testing framework and its componenets"
-      @updated_example.project.should eq "MarcinKCebula"
+      @updated_example.project.should eq "MarcinCebula"
       @updated_example.revision.should eq 1
       # @updated_example.email.should eq @example.email
     end
@@ -85,7 +85,7 @@ describe 'PUT /api/v1/projects/:id', :type => :api do
       @updated_example.name.should eq "Implement testing"
       @updated_example.user.should eq @example.user
       @updated_example.description.should eq "This feature should implement rspec TDD suit for Example resource"
-      @updated_example.project.should eq "MarcinKCebula"
+      @updated_example.project.should eq "MarcinCebula"
       @updated_example.revision.should eq 7
       @updated_example.email.should eq @example.email
 
@@ -106,7 +106,7 @@ describe 'PUT /api/v1/projects/:id', :type => :api do
       @updated_example.name.should eq "Implement testing"
       @updated_example.user.should eq @example.user
       @updated_example.description.should eq "This feature should implement rspec TDD suit for Example resource"
-      @updated_example.project.should eq "MarcinKCebula"
+      @updated_example.project.should eq "MarcinCebula"
       @updated_example.revision.should eq 1
       @updated_example.email.should eq @example.email
     end
@@ -122,7 +122,7 @@ describe 'PUT /api/v1/projects/:id', :type => :api do
       @updated_example.name.should eq "Generic Example"
       @updated_example.user.should eq @example.user
       @updated_example.description.should eq "Generic Example, tests for issues that may be caused by the testing framework and its componenets"
-      @updated_example.project.should eq "MarcinKCebula"
+      @updated_example.project.should eq "MarcinCebula"
       @updated_example.revision.should eq 1
       @updated_example.email.should eq "#{@example.user}@gmail.com"
     end

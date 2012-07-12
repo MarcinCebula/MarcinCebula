@@ -2,9 +2,9 @@ require "bundler/capistrano"
 
 set :default_environment, {
   'RAILS_ENV' =>  'production',
-  'PATH'      =>  '/home/ubuntu/.rvm/gems/ruby-1.9.3-p0@MarcinKCebula/bin:/home/ubuntu/.rvm/gems/ruby-1.9.3-p0@global/bin:/home/ubuntu/.rvm/rubies/ruby-1.9.3-p0/bin:/home/ubuntu/.rvm/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games',
-  'GEM_PATH'  =>  '/home/ubuntu/.rvm/gems/ruby-1.9.3-p0@MarcinKCebula:/home/ubuntu/.rvm/gems/ruby-1.9.3-p0@global',
-  'GEM_HOME'  =>  '/home/ubuntu/.rvm/gems/ruby-1.9.3-p0@MarcinKCebula',
+  'PATH'      =>  '/home/ubuntu/.rvm/gems/ruby-1.9.3-p0@MarcinCebula/bin:/home/ubuntu/.rvm/gems/ruby-1.9.3-p0@global/bin:/home/ubuntu/.rvm/rubies/ruby-1.9.3-p0/bin:/home/ubuntu/.rvm/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games',
+  'GEM_PATH'  =>  '/home/ubuntu/.rvm/gems/ruby-1.9.3-p0@MarcinCebula:/home/ubuntu/.rvm/gems/ruby-1.9.3-p0@global',
+  'GEM_HOME'  =>  '/home/ubuntu/.rvm/gems/ruby-1.9.3-p0@MarcinCebula',
   'rvm_path'  =>  '/home/ubuntu/.rvm',
   'NGINX_HOME'=>  '/opt/nginx'
 }
@@ -18,8 +18,8 @@ ssh_options[:keys] = File.join(ENV["HOME"], ".ssh", "id_rsa")
 server_ip = "50.17.232.142"
 set :user, "ubuntu"
 
-set :application, "MarcinKCebula"
-set :repository,  "git@github.com:MarcinRKL/MarcinKCebula.git"
+set :application, "MarcinCebula"
+set :repository,  "git@github.com:MarcinRKL/MarcinCebula.git"
 # set :branch, "staging"
 set :deploy_to, "/opt/apps/#{application}"
 set :scm, "git"
@@ -32,7 +32,7 @@ role :db,  server_ip, :primary => true        # This is where Rails migrations w
 
 namespace :deploy do
   
-  LocalSharePath = File.join(`echo $SNOZZBERRYLABS`.strip, 'SHARED', 'MarcinKCebula').to_s
+  LocalSharePath = File.join(`echo $SNOZZBERRYLABS`.strip, 'SHARED', 'MarcinCebula').to_s
 
   task :start do ; end
   task :stop do ; end
@@ -103,7 +103,7 @@ namespace :cron do
   end
 end
 
-after 'deploy:update_code', 'rvm:trust_rvmrc', 'deploy:sync','deploy:symlink', 'deploy:bundle'
+after 'deploy:update_code', 'rvm:trust_rvmrc', 'deploy:sync','deploy:symlink'#, 'deploy:bundle'
 
 ## Just precompile before push
 #deploy:assets:precompile'

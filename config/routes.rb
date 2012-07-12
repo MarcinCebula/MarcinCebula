@@ -1,4 +1,4 @@
-MarcinKCebula::Application.routes.draw do
+MarcinCebula::Application.routes.draw do
  
 
   namespace :api do
