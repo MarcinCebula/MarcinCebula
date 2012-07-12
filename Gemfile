@@ -18,7 +18,7 @@ gem 'jquery-rails'
 gem 'httparty', :require => 'httparty'
 gem 'active_attr'
 gem 'heroku'
-
+gem 'capistrano'
 
 
 group :assets do
