@@ -1,4 +1,4 @@
-GenericRailsProject::Application.routes.draw do
+MarcinKCebula::Application.routes.draw do
  
 
   namespace :api do
