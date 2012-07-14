@@ -11,6 +11,9 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
 
+  <%= stylesheet_link_tag    controller.controller_name, :media => "all" %>
+  <%= javascript_include_tag controller.controller_name %>
+
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -22,9 +25,7 @@
 	<% end %>
 
 	<div id="body">
-		<div class="container">
-			<%= yield %>
-		</div>
+		<%= yield %>
 	</div>
 
 </body>
