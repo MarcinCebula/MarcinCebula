@@ -14,7 +14,6 @@ gem 'rabl'
 gem 'thin'
 gem 'slim'
 gem 'httparty', :require => 'httparty'
-gem 'capistrano'
 gem 'ember-rails'
 
 

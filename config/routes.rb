@@ -11,7 +11,8 @@ MarcinCebula::Application.routes.draw do
   
   
   resources :docs, :only => [:index]
+  resources :blog, :only => [:index]
 
-  root :to => 'docs#index'
+  root :to => 'blog#index'
 
 end
