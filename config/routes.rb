@@ -12,6 +12,9 @@ MarcinCebula::Application.routes.draw do
   
   resources :docs, :only => [:index]
   resources :blog, :only => [:index]
+  
+  get "blogs/chef_recipies"
+  get "blogs/setup_hosted_chef"
 
   root :to => 'blog#index'
 

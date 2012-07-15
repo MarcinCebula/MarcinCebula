@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<title>Chef Recipies</title>
+		<meta name="author" content="www.mattvarone.com">
+		<link rel="stylesheet" media="screen,projection" href="plugins/css/bootstrap.min.css" />
+		<link rel="stylesheet" media="screen,projection" href="plugins/css/docs.min.css" />
+		<link rel="stylesheet" media="screen,projection" href="plugins/css/ui.totop.css" />
+
+		<link type="text/css" rel="stylesheet" href="plugins/css/shCoreDjango.css"/>
+		<link type="text/css" rel="Stylesheet" href="plugins/css/shThemeMidnight.css" /
+		<meta name="viewport" content="width=device-width; initial-scale=1"/>
+	</head>
+
+	<body>
+		<div class="container">
+			<hr>
+			<div class="marketing">
+				<h1>My Configs for Chef Recipes</h1>
+				<p class="marketing-byline">Few sensical configs for production services</p>
+			</div> <!-- marketing -->
+			<hr>
+			
+			<div class="span4">
+				<div class="well">
+					<ul class="nav nav-list">
+						<li><a href="#">
+							<h4>Mysql</h4>
+						</a></li>
+						<ul class="nav nav-list">
+							<li><a href="#">Databags</a></li>
+							<li><a href="#">Config</a></li>
+						</ul>
+						<li class="divider"></li>
+						
+						<li><a href="#">
+							<h4>VagrantUp Local!</h4>
+						</a></li>
+						<ul class="nav nav-list">
+							<li><a href="#">Install</a></li>
+							<li><a href="#">Configure</a></li>
+							<li><a href="#">Deploy</a></li>
+						</ul>
+						<li class="divider"></li>
+						
+						<li><a href="#">
+							<h4>VagrantUp Cloud!</h4>
+						</a></li>
+						<ul class="nav nav-list">
+							<li><a href="#">Install</a></li>
+							<li><a href="#">Configure</a></li>
+							<li><a href="#">Deploy</a></li>
+						</ul>
+						<li class="divider"></li>
+						
+						<li><a href="#">
+							<h4>Hosted Chef</h4>
+						</a></li>
+						<ul class="nav nav-list">
+							<li><a href="#">Account</a></li>
+							<li><a href="#">Knife</a></li>
+						</ul>
+					</ul>
+				</div> <!-- div.well -->
+	 		</div> <!-- div.span4 -->
+			<div class="span7">
+				<br /><br />
+				<p class ="marketing-byline">This tutorial is suppose to help you understand or at least help you configure your recipes to be more production ready and make your services a little more useable and secure.
+					</p>
+	 		</div> <!-- div.span7 -->
+		</div> <!-- container -->
+		
+		<div id="hosted-chef" class="container">
+			<hr>
+			<div id="hosted-chef-account" class="marketing">
+				<h2>MySQL: Intro</h2>
+			</div> <!-- marketing -->
+			<div class="container">
+				<div class="span10">
+					<p> If you are running a SQL based database the first problem you my encounter right after  installation might be
+						the <a href="http://www.bugzilla.org/docs/2.18/html/security-mysql.html">anonymous user</a> and the need to set permission on specific users for specific databases. I don't think manually configuring each database server is a valid solution and keeping the SQL script with the user and password as a text file isn't a good idea either. Databags allow us to safely encrypt important data and Chef allows us to automate the process.
+					</p>
+					<h6>This is my preferred directory structure as of today</h4>
+					<div class="well span3">
+						<ul class="">
+							<li>data_bags</li>
+							<ul class="">
+								<li>development</li>
+								<li>vm-development</li>
+									<ul class="">
+										<li>mysql.json</li>
+										<li>passenger.json</li>
+										<li>mongo.json</li>
+									</ul>
+								<li>staging</li>
+								<li>production</li>
+							</ul>
+						</ul>
+					</div>
+				</div> <!-- div.span10 -->
+			</div> <!-- div.container -->
+			<h3>Creating the secret key</h3>
+			<div class="offspan1">
+				<p>
+					I choose to keep my secret key in <code>Secretfile</code> under the <code>chef-repo</code> directory. Also in <code>.gitignore</code> I add <code>./databags/production, ./databags/staging and ./Secretfile</code>
+				</p>
+				<p> To generate a secret key run: <code>openssl rand -base64 512 | tr -d '\r\n' > ./Secretfile</code>
+					
+				</p>
+			</div>
+			
+
+				
+		<hr>
+	</div> <!-- div.container -->
+	<footer>
+	</footer>
+		
+		<script src="plugins/js/jquery-1.7.2.min.js" type="text/javascript"></script>
+		<script src="plugins/js/easing.js" type="text/javascript"></script>
+		<script src="plugins/js/jquery.ui.totop.min.js" type="text/javascript"></script>
+
+		<script type="text/javascript" src="plugins/js/XRegExp.js"></script>
+		<script type="text/javascript" src="plugins/js/shCore.js"></script>
+		<script type="text/javascript" src="plugins/js/shBrushRuby.js"></script>
+				
+		<script type="text/javascript">
+			$(document).ready(function() { 
+				$().UItoTop({ easingType: 'easeOutQuart' });
+				SyntaxHighlighter.all()
+				// timedRefresh('30000')
+			});
+			function timedRefresh(timeoutPeriod) { setTimeout("location.reload(true);",timeoutPeriod); }
+		</script>
+		
+	</body> 
+</html>
