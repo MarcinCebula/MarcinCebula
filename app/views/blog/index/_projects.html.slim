@@ -1,0 +1,22 @@
+div.container
+	div.arrow
+		=image_tag 'arrows/arrow_07.png'
+	hr
+div.container.projects
+	div.container.project
+		=render 'blog/projects/wrynku'
+	br
+	div.container.project
+		=render 'blog/projects/social_stocks_ticker'
+
+	br
+	div.container.project
+		=render 'blog/projects/simple_public_timeline'
+	hr
+div.container.projects
+	div.title
+		| In the pipeline
+	br
+	div.container.project
+		=render 'blog/projects/notify_me_captain'
+	

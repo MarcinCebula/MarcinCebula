@@ -12,11 +12,12 @@
   <%= javascript_include_tag "application" %>
 
   <%= stylesheet_link_tag    controller.controller_name, :media => "all" %>
-  <%= javascript_include_tag controller.controller_name %>
+  <%= javascript_include_tag  controller.controller_name %>
+
 
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body data-spy="scroll">
 	<%= render 'layouts/application/navigation' %>
 	<% if notice %>
 		<p class="alert alert-success"><%= notice %></p>
