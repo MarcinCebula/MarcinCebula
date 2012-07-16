@@ -6,7 +6,7 @@ describe ApplicationController do
   	# subject { controller }
   	
     it "should route to / { :format => 'html' } through GET" do
-        { :get => '/' }.should route_to(:controller => 'docs', :action => 'index')   
+        { :get => '/' }.should route_to(:controller => 'blog', :action => 'index')   
     end
   end
   

@@ -11,9 +11,13 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
 
+  <%= stylesheet_link_tag    controller.controller_name, :media => "all" %>
+  <%= javascript_include_tag  controller.controller_name %>
+
+
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body data-spy="scroll">
 	<%= render 'layouts/application/navigation' %>
 	<% if notice %>
 		<p class="alert alert-success"><%= notice %></p>
@@ -22,9 +26,7 @@
 	<% end %>
 
 	<div id="body">
-		<div class="container">
-			<%= yield %>
-		</div>
+		<%= yield %>
 	</div>
 
 </body>

@@ -11,23 +11,18 @@ gem "mongoid", "~> 2.4"
 gem "bson_ext", "~> 1.5"
 
 gem 'rabl'
-gem 'haml'
 gem 'thin'
-gem 'ember-rails'
-gem 'jquery-rails'
+gem 'slim'
 gem 'httparty', :require => 'httparty'
-gem 'active_attr'
-gem 'heroku'
-gem 'capistrano'
+gem 'ember-rails'
 
 
 group :assets do
-	gem 'ember-rails'
+  gem 'jquery-rails'
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
 	gem 'compass-rails' 
-  gem 'slim'
-	gem "compass_twitter_bootstrap"
+	gem "compass_twitter_bootstrap", :git => 'git://github.com/vwall/compass-twitter-bootstrap.git'
   gem 'uglifier', '>= 1.0.3'
 end
 
