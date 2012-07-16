@@ -10,4 +10,5 @@
  *
  *= require ./base
  *= require_tree ./layout
+ *= require ./blog
 */
