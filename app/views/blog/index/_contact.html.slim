@@ -4,4 +4,12 @@ div.container
 		div.subheader-text 
 			| Contact
 			span Talk to me sexy!
+div.container.large-padding-top
+	div.seperator.span12	
+	div.links.span11.offset1
+		=render 'blog/index/contact-links'
+	div.seperator.span12
+	div.form.container.span12
+		handlebars:
+			{{view Blog.ContactForm}}
 
