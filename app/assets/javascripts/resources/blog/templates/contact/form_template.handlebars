@@ -1,7 +1,9 @@
-<form class="contact">	
-	<span class="my-email">To: <a href="mailto:Marcin.K.Cebula@gmail.com">Marcin.K.Cebula@gmail.com</a></span>
+<span class="my-email">To: <a href="mailto:Marcin.K.Cebula@gmail.com">Marcin.K.Cebula@gmail.com</a></span>
+<br />
+
+<form class="contact">		
+	{{view Blog.MessageEmail}}
+	{{view Blog.MessageBody}}
 	<br />
-	{{view Ember.TextField valueBinding="contactEmail" class="input-xlarge span6"}}
-	{{view Ember.TextArea valueBinding="contactEmail" class="input-xlarge span11"}}
-	<button class="btn btn-success btn-large" type="submit">Send Message</button>
+	{{view Blog.SendMessageButton}}
 </form>
