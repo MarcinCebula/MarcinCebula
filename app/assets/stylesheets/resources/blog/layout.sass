@@ -148,6 +148,8 @@ form
 		height: 300px
 		font-size: 1.8em
 		
+	input:focus
+		border-color: white
 	textarea:focus
 		border-color: white
 	
@@ -196,7 +198,7 @@ div.seperator
 	border-top: 0.5px #8C9FC5 solid
 
 .my-email
-	padding-top: 50px
+	padding-top: 100px
 	padding-bottom: 25px
 	padding-left: 15px
 	display: inline-block
@@ -205,3 +207,15 @@ div.seperator
 	font-style: italic
 	letter-spacing: -0.02em
 	
+input::-webkit-input-placeholder 
+	color: #cdf !important
+
+input:-moz-placeholder
+	color: #cdf !important
+	
+textarea::-webkit-input-placeholder 
+	color: #cdf !important
+
+textarea:-moz-placeholder
+	color: #cdf !important
+
