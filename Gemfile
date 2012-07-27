@@ -15,7 +15,7 @@ gem 'thin'
 gem 'slim'
 gem 'httparty', :require => 'httparty'
 gem 'ember-rails'
-
+gem 'capistrano'
 
 group :assets do
   gem 'jquery-rails'
