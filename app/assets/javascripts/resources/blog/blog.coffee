@@ -1,1 +1,1 @@
-# window.Blog = Ember.Application.create()
+window.Blog = Ember.Application.create()

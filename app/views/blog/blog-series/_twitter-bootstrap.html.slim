@@ -4,7 +4,7 @@ div.span12
 		a href="#" Twitter Boostrap
 	hr.span11
 	p.description.span10
-		| The biggest issues I came across working with <code>Bootstrap</code> is getting the view to work on a mobile device. The problems encountered relate to <a href="padding_on_body">padding on the body</a> as well as <a href="html_overflow">overflows caused by paddings</a>.
+		| The biggest issues I came across working with <code>Bootstrap</code> is getting the view to work on a mobile device. The problems encountered relate to <a data-toggle="modal" href="#padding-on-body">padding on the body</a> as well as <a data-toggle="modal" href="#html-overflow">overflows caused by paddings</a>.
 	div.span4
 		ul.nav.nav-list
 			li
@@ -16,3 +16,27 @@ div.span12
 			li
 				a href="#"
 					span.nav-url Seting up Hosted Chef
+					
+					
+div class="modal hide larger-modal" id="padding-on-body"
+	div class="modal-header"
+		h1 Annoying extra padding on body
+	div class="modal-body"
+		h6 
+			| The problem occures when you have a div which you want to stretch against the entire page. The div will look broken like the ones below. 
+		img src="http://s3.amazonaws.com/MarcinCebula/blogs/twitter-bootstrap/iPhone-body-padding.png"
+		img src="http://s3.amazonaws.com/MarcinCebula/blogs/twitter-bootstrap/webite-body-padding.png"
+	div class="modal-footer"
+		a href="#" class="btn" data-dismiss="modal" Close</a>
+
+div class="modal hide larger-modal" id="html-overflow"
+	div class="modal-header"
+		h1 
+			| Bootstrap Responsive adds padding-left/right  
+	div class="modal-body"
+		h6 
+			| Bootstrap responsive adds this extra padding which can be seen in the pictures below when the css for mobile is fired. 
+		img src="http://s3.amazonaws.com/MarcinCebula/blogs/twitter-bootstrap/iPhone-error-padding.png"
+		img src="http://s3.amazonaws.com/MarcinCebula/blogs/twitter-bootstrap/website-error-padding.png"
+	div class="modal-footer"
+		a href="#" class="btn" data-dismiss="modal" Close</a>
